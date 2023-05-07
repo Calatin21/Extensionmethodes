@@ -16,25 +16,51 @@ namespace Extensionmethodes {
             for (int i = 0; i < s.Length; i++) {
                 if (char.IsWhiteSpace(s[i])) {
                     if (i - 1 >= 0 && i + 1 < s.Length) {
-                        if (char.IsLetter(s[i - 1]) && char.IsLetter(s[i + 1])) {
+                        if (char.IsLetter(s[i - 1]) || char.IsLetter(s[i + 1])) {
                             ergebnis++;
                         }
                     }
                 }
             }
             Console.WriteLine(ergebnis);
-            //string[] woerter = s.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            //Console.WriteLine(woerter.Length);
-        }
-        public static void AddCopyright(this string s, int abstand) {
-            //string[] woerter = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] woerter = s.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine(woerter.Length);
             //foreach (string item in woerter) {
             //    Console.WriteLine(item);
             //}
-            StringBuilder sb = new StringBuilder();
-            sb.Append(s);
-            Console.WriteLine(sb);
-            //for(int i = 0; i  ; i++) { }
+        }
+        public static void AddCopyright(this string s, int abstand) {
+            string[] woerter = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            s = "";
+            for (int i = 0; i < woerter.Length; i++) {
+                if(i % (abstand+1) == 0) {
+                    s += " BITLC Neuss ";
+                }
+                s += woerter[i] +" ";
+            }
+            Console.WriteLine(s);
+            //StringBuilder sb = new StringBuilder();
+            //int ergebnis = 0;
+            //int x = 0;
+            //string cache = "BITLC Neuss ";
+            //string cache2 = s;
+            //Console.WriteLine(s.Count());
+            //for (int i = 0; i < s.Length; i++) {
+            //    if (char.IsWhiteSpace(s[i]) && !(char.IsLetter(s[i]))) {
+            //        if (i - 1 >= 0 && i + 1 < s.Length) {
+            //            if (char.IsLetter(s[i - 1]) && char.IsLetter(s[i + 1])) {
+            //                ergebnis++;
+            //                if (ergebnis % abstand == 0) {
+            //                    cache += s.Substring(x, i);
+            //                    cache += " BITLC Neuss ";
+            //                    x = i;
+            //                }
+            //            }
+            //        }
+            //    }
+
+            //}
+            //Console.WriteLine(cache);
             //for (int i = 0; i < woerter.Length; i++) {
             //    if (i % (abstand - 1) == 0) {
             //        woerter[i] += " BITLC Neuss";
