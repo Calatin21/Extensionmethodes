@@ -23,8 +23,10 @@ namespace Extensionmethodes {
                 }
             }
             Console.WriteLine(ergebnis);
-            string[] woerter = s.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Console.WriteLine(woerter.Length);
+
+            //Zur Ausgabe der gezählten Wörter.
+            //
+            //string[] woerter = s.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             //foreach (string item in woerter) {
             //    Console.WriteLine(item);
             //}
@@ -39,6 +41,7 @@ namespace Extensionmethodes {
                 s += woerter[i] +" ";
             }
             Console.WriteLine(s);
+
             //StringBuilder sb = new StringBuilder();
             //int ergebnis = 0;
             //int x = 0;
